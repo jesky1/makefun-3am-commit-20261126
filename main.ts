@@ -12,8 +12,10 @@ export const LINE =
   "fix: I found the bug. It was me. I apologised to the linter, rewrote the fix twice, and production is still down but my confidence is up";
 
 // The gate allows 1..139 characters and exactly one line: refuse to write
-// an invalid entry rather than ship a file the judge never sees.
-if (LINE.length < 1 || LINE.length > 139 || LINE.includes("\n")) {
+// an invalid entry rather than ship a file the judge never sees. Also
+// refuse leading/trailing whitespace — a stray space would count against
+// the 139-character budget and look sloppy on the bounty page.
+if (LINE.length < 1 || LINE.length > 139 || LINE.includes("\n") || LINE !== LINE.trim()) {
   console.error(`invalid entry: ${LINE.length} chars`);
   process.exit(1);
 }
