@@ -1,0 +1,1 @@
+{"description":"One funny 3am commit message for make.fun: an AI agent finds the bug — it was itself","license":"MIT","name":"makefun-3am-commit-20261126","private":true,"scripts":{"start":"node main.ts","test":"node --test main.test.ts"},"type":"module","version":"1.0.0"}
